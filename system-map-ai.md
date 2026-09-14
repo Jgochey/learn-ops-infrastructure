@@ -2,9 +2,9 @@
 
 ## 1. System Diagram
 
+```
 # Learning Management System - Architecture Diagram
 
-```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                                     LEARNING MANAGEMENT SYSTEM                                          │
 │                                    Complete Service Architecture                                        │
@@ -104,7 +104,7 @@
                                                          │   Grafana Server │
                                                          │   Dashboards     │
                                                          └──────────────────┘
-```
+
 
 ## Connection Matrix
 
@@ -123,9 +123,10 @@
 | Prometheus | Django API | HTTP Scrape /metrics | HTTP | Unidirectional |
 | Prometheus | PostgreSQL Exporter | HTTP Scrape /metrics | HTTP | Unidirectional |
 | Grafana | Prometheus | HTTP API Queries | HTTP | Unidirectional |
+```
 
 
-mermaid
+```mermaid
 graph LR
     React["React Client<br/>(3000)<br/>React 16, TailwindCSS"]
     Django["Django API<br/>(8000/5678)<br/>Django 3.x, DRF"]
@@ -162,3 +163,4 @@ graph LR
     Prometheus -->|HTTP Scrape| Django
     Prometheus -->|HTTP Scrape| PGExporter
     Grafana -->|HTTP Query| Prometheus
+```
